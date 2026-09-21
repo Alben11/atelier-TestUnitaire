@@ -16,6 +16,8 @@ jobs:
         with:                      # Paramètres de configuration pour l'action setup-java
           distribution: 'temurin'
           java-version: '25'
+      - name: Ajouter droit pour la compilation
+        run: chmod +x mvnw
       - name: Compiler le projet
         run: ./mvnw compile
           
