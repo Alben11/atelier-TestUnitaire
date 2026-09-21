@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     # Définition des étapes du workflow
     steps:
-      - uses: actions/checkout@v5
       - name: Checkout repository
+        uses: actions/checkout@v5
       - name: Set up JDK 25
         uses: actions/setup-java@v5
         with:                      # Paramètres de configuration pour l'action setup-java
