@@ -20,6 +20,7 @@ jobs:
       - name: Ajouter droit pour la compilation
         run: chmod +x mvnw
       - name: Compiler le projet
-        run: ./mvnw test -Dtest=CalculatriceTest
+        #run: ./mvnw test -Dtest=CalculatriceTest
+        run: ./mvnw test
           
   
