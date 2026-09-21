@@ -3,6 +3,7 @@ name: Compilation du projet atelier-test-unitaires
 # Le on spécifie à quel moment le workflow doit s'exécuter.  Ici, on le
 on: 
   push:
+  workflow_dispatch: # Permet de déclencher le workflow manuellement depuis l'interface GitHub
 
 jobs:
   compitation: # Nom du 1er job qui s'exécute sur un runner Ubuntu
@@ -19,6 +20,6 @@ jobs:
       - name: Ajouter droit pour la compilation
         run: chmod +x mvnw
       - name: Compiler le projet
-        run: ./mvnw compile
+        run: ./mvnw -Dtest=CalculatriceTest#additionnerDeuxNombresPositifs+soustraireDonneLaDifference+multiplierDeuxNombres+maxRetourneLePlusGrandDesDeuxNombres+estPairDistingueLesNombresPairsEtImpairs+diviserParZeroLanceUneException+estPremierRetourneVraiPourLesNombresPremiersConnus+estPremierGereLesCasLimites+diviserAvecNombresNegatifs
           
   
