@@ -1,0 +1,22 @@
+# On commence par fournir un nom
+name: Compilation du projet atelier-test-unitaires
+# Le on spécifie à quel moment le workflow doit s'exécuter.  Ici, on le
+on: 
+  push:
+
+jobs:
+  compitation: # Nom du 1er job qui s'exécute sur un runner Ubuntu
+    runs-on: ubuntu-latest
+    # Définition des étapes du workflow
+    steps:
+      - uses: actions/checkout@v5
+      - name: Va chercher le code source du projet (checkout repository)
+      - name: Set up JDK 25
+        uses: actions/setup-java@v5
+        with:                      # Paramètres de configuration pour l'action setup-java
+          distribution: 'temurin'
+          java-version: '25'
+      - name: Compiler le projet
+        run: ./mvnw compile
+          
+  
